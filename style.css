@@ -1,0 +1,35 @@
+body {
+  margin: 0;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+#map {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: 0;
+}
+
+#story {
+  position: relative;
+  width: 100%;
+  z-index: 10;
+}
+
+#features {
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 50vh 20px;
+}
+
+.step {
+  padding: 40vh 0;
+  font-size: 1.5rem;
+  line-height: 1.6;
+  background: rgba(255, 255, 255, 0.9);
+  margin-bottom: 5rem;
+  border-left: 4px solid #222;
+  padding-left: 1rem;
+}
