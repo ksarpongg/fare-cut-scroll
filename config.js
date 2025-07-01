@@ -8,7 +8,7 @@ const config = {
       title: '',
       description: '',
       location: {
-        center: [-1.0232, 7.9465], // Ghana national view
+        center: [-1.0232, 7.9465],
         zoom: 6,
         pitch: 0,
         bearing: 0
@@ -22,7 +22,7 @@ const config = {
       title: '',
       description: '',
       location: {
-        center: [-0.1870, 5.6037], // Greater Accra
+        center: [-0.1870, 5.6037],
         zoom: 9,
         pitch: 0,
         bearing: 0
@@ -36,7 +36,7 @@ const config = {
       title: '',
       description: '',
       location: {
-        center: [-0.4258, 5.5346], // Kasoa Bus Stop
+        center: [-0.4258, 5.5346],
         zoom: 16,
         pitch: 60,
         bearing: 0
@@ -50,7 +50,7 @@ const config = {
       title: '',
       description: '',
       location: {
-        center: [-0.3920, 5.5470], // Kasoa to Old Barrier
+        center: [-0.3920, 5.5470],
         zoom: 15,
         pitch: 60,
         bearing: 0
@@ -64,7 +64,7 @@ const config = {
       title: '',
       description: '',
       location: {
-        center: [-0.3775, 5.5608], // Old Barrier
+        center: [-0.3775, 5.5608],
         zoom: 16,
         pitch: 60,
         bearing: 0
@@ -78,7 +78,7 @@ const config = {
       title: '',
       description: '',
       location: {
-        center: [-0.3430, 5.5720], // Old Barrier to Mallam Junction
+        center: [-0.3430, 5.5720],
         zoom: 15,
         pitch: 60,
         bearing: 0
@@ -92,7 +92,7 @@ const config = {
       title: '',
       description: '',
       location: {
-        center: [-0.3090, 5.5810], // Mallam Junction
+        center: [-0.3090, 5.5810],
         zoom: 16,
         pitch: 60,
         bearing: 0
@@ -106,4 +106,55 @@ const config = {
       title: '',
       description: '',
       location: {
-        center: [-0.2750, 5.5915], // Mal
+        center: [-0.2750, 5.5915],
+        zoom: 15,
+        pitch: 60,
+        bearing: 0
+      },
+      onChapterEnter: [],
+      onChapterExit: []
+    },
+    {
+      id: 'slide9',
+      alignment: 'center',
+      title: '',
+      description: '',
+      location: {
+        center: [-0.2325, 5.5958],
+        zoom: 16,
+        pitch: 60,
+        bearing: 0
+      },
+      onChapterEnter: [],
+      onChapterExit: []
+    },
+    {
+      id: 'slide10',
+      alignment: 'center',
+      title: '',
+      description: '',
+      location: {
+        center: [-0.2100, 5.5989],
+        zoom: 15,
+        pitch: 60,
+        bearing: 0
+      },
+      onChapterEnter: [],
+      onChapterExit: []
+    },
+    {
+      id: 'slide11',
+      alignment: 'center',
+      title: '',
+      description: '',
+      location: {
+        center: [-0.2056, 5.5601],
+        zoom: 16,
+        pitch: 60,
+        bearing: 0
+      },
+      onChapterEnter: [],
+      onChapterExit: []
+    }
+  ]
+};
