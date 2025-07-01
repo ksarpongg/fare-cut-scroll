@@ -27,7 +27,7 @@ const config = {
       alignment: 'center',
       location: {
         center: [-0.423756, 5.534052], // Kasoa
-        zoom: 18.5,
+        zoom: 17.5,
         pitch: 60,
         bearing: -20
       }
@@ -37,7 +37,7 @@ const config = {
       alignment: 'center',
       location: {
         center: [-0.329034, 5.551157], // Old Barrier
-        zoom: 18.2,
+        zoom: 17.5,
         pitch: 60,
         bearing: -30
       }
@@ -47,7 +47,7 @@ const config = {
       alignment: 'center',
       location: {
         center: [-0.329034, 5.551157],
-        zoom: 18.5,
+        zoom: 17.5,
         pitch: 60,
         bearing: -10
       }
@@ -57,7 +57,7 @@ const config = {
       alignment: 'center',
       location: {
         center: [-0.286262, 5.569050], // Mallam
-        zoom: 18.2,
+        zoom: 17.5,
         pitch: 60,
         bearing: -15
       }
@@ -67,7 +67,7 @@ const config = {
       alignment: 'center',
       location: {
         center: [-0.286262, 5.569050],
-        zoom: 18.5,
+        zoom: 17.5,
         pitch: 60,
         bearing: 0
       }
@@ -77,7 +77,7 @@ const config = {
       alignment: 'center',
       location: {
         center: [-0.237506, 5.566120], // Kaneshie
-        zoom: 18.2,
+        zoom: 17.5,
         pitch: 60,
         bearing: 0
       }
@@ -87,7 +87,7 @@ const config = {
       alignment: 'center',
       location: {
         center: [-0.237506, 5.566120],
-        zoom: 18.5,
+        zoom: 17.5,
         pitch: 60,
         bearing: 15
       }
@@ -97,7 +97,7 @@ const config = {
       alignment: 'center',
       location: {
         center: [-0.21684, 5.569132], // Circle
-        zoom: 18.2,
+        zoom: 17.5,
         pitch: 60,
         bearing: 15
       }
@@ -107,7 +107,7 @@ const config = {
       alignment: 'center',
       location: {
         center: [-0.21684, 5.569132],
-        zoom: 18.5,
+        zoom: 17.5,
         pitch: 60,
         bearing: 30
       }
