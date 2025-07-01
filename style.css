@@ -27,11 +27,11 @@ body {
 .step {
   max-width: 600px;
   margin: 0 auto 5rem auto;
-  padding: 1.5rem;
+  padding: 2rem;
   font-size: 1rem;
-  line-height: 1.6;
+  line-height: 1.75;
   color: white;
-  background-color: rgba(0, 0, 0, 0.85); /* translucent black */
+  background-color: rgba(0, 0, 0, 0.6);  /* ← Best for satellite visibility */
   border-left: 4px solid #fff;
   border-radius: 4px;
   transition: all 0.3s ease-in-out;
