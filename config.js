@@ -4,70 +4,106 @@ const config = {
   chapters: [
     {
       id: 'slide1',
-      center: [-1.0232, 7.9465],
-      zoom: 6,
-      pitch: 0,
-      bearing: 0
+      alignment: 'center',
+      title: '',
+      description: '',
+      location: {
+        center: [-1.0232, 7.9465], // Ghana national view
+        zoom: 6,
+        pitch: 0,
+        bearing: 0
+      },
+      onChapterEnter: [],
+      onChapterExit: []
     },
     {
       id: 'slide2',
-      center: [-0.1870, 5.6037],
-      zoom: 9
+      alignment: 'center',
+      title: '',
+      description: '',
+      location: {
+        center: [-0.1870, 5.6037], // Greater Accra
+        zoom: 9,
+        pitch: 0,
+        bearing: 0
+      },
+      onChapterEnter: [],
+      onChapterExit: []
     },
     {
-  id: 'slide3',
-  alignment: 'center',
-  title: '',
-  description: '',
-  location: {
-    center: [-0.4258, 5.5346], // Longitude first!
-    zoom: 16,
-    pitch: 60,
-    bearing: 0
-  },
-  onChapterEnter: [],
-  onChapterExit: []
-}
-
+      id: 'slide3',
+      alignment: 'center',
+      title: '',
+      description: '',
+      location: {
+        center: [-0.4258, 5.5346], // Kasoa Bus Stop
+        zoom: 16,
+        pitch: 60,
+        bearing: 0
+      },
+      onChapterEnter: [],
+      onChapterExit: []
+    },
     {
       id: 'slide4',
-      center: [-0.3920, 5.5470],
-      zoom: 14
+      alignment: 'center',
+      title: '',
+      description: '',
+      location: {
+        center: [-0.3920, 5.5470], // Kasoa to Old Barrier
+        zoom: 15,
+        pitch: 60,
+        bearing: 0
+      },
+      onChapterEnter: [],
+      onChapterExit: []
     },
     {
       id: 'slide5',
-      center: [-0.3775, 5.5608],
-      zoom: 15
+      alignment: 'center',
+      title: '',
+      description: '',
+      location: {
+        center: [-0.3775, 5.5608], // Old Barrier
+        zoom: 16,
+        pitch: 60,
+        bearing: 0
+      },
+      onChapterEnter: [],
+      onChapterExit: []
     },
     {
       id: 'slide6',
-      center: [-0.3430, 5.5720],
-      zoom: 15
+      alignment: 'center',
+      title: '',
+      description: '',
+      location: {
+        center: [-0.3430, 5.5720], // Old Barrier to Mallam Junction
+        zoom: 15,
+        pitch: 60,
+        bearing: 0
+      },
+      onChapterEnter: [],
+      onChapterExit: []
     },
     {
       id: 'slide7',
-      center: [-0.3090, 5.5810],
-      zoom: 15
+      alignment: 'center',
+      title: '',
+      description: '',
+      location: {
+        center: [-0.3090, 5.5810], // Mallam Junction
+        zoom: 16,
+        pitch: 60,
+        bearing: 0
+      },
+      onChapterEnter: [],
+      onChapterExit: []
     },
     {
       id: 'slide8',
-      center: [-0.2750, 5.5915],
-      zoom: 15
-    },
-    {
-      id: 'slide9',
-      center: [-0.2325, 5.5958],
-      zoom: 15
-    },
-    {
-      id: 'slide10',
-      center: [-0.2100, 5.5989],
-      zoom: 15
-    },
-    {
-      id: 'slide11',
-      center: [-0.2056, 5.5601],
-      zoom: 15
-    }
-  ]
-};
+      alignment: 'center',
+      title: '',
+      description: '',
+      location: {
+        center: [-0.2750, 5.5915], // Mal
