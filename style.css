@@ -21,7 +21,7 @@ body {
   width: 100%;
   max-width: 700px;
   margin: 0 auto;
-  padding: 10vh 20px 50vh; /* shorter top padding, longer bottom scroll */
+  padding: 10vh 20px 50vh;
 }
 
 .step {
