@@ -33,9 +33,11 @@ map.on('load', function () {
   const accraMarkerEl = document.createElement('div');
   accraMarkerEl.className = 'pulse-marker';
 
-  // Initialize marker with coordinates of Greater Accra
-  accraMarker = new mapboxgl.Marker(accraMarkerEl)
-  .setLngLat([-0.22, 5.65]);
+  // ✅ Anchor the marker properly so it aligns with coordinates
+  accraMarker = new mapboxgl.Marker({
+    element: accraMarkerEl,
+    anchor: 'bottom' // aligns the base of the dot to the point
+  }).setLngLat([-0.22, 5.65]);
 });
 
 // Scrollama scroll setup
