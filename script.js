@@ -9,9 +9,10 @@ const map = new mapboxgl.Map({
   bearing: config.chapters[0].location.bearing || 0
 });
 
-// Add Ghana border and bus stop markers when map loads
+let accraMarker; // defined globally to toggle during scrolling
+
 map.on('load', () => {
-  // Ghana border
+  // Ghana country outline
   map.addSource('ghana-border', {
     type: 'geojson',
     data: 'https://raw.githubusercontent.com/johan/world.geo.json/master/countries/GHA.geo.json'
@@ -45,17 +46,13 @@ map.on('load', () => {
       .addTo(map);
   });
 
-  // Blinking marker for Greater Accra
-  const accraMarkerEl = document.createElement('div');
-  accraMarkerEl.className = 'pulse-marker';
-
-  // Corrected coordinates for better visibility over Accra
-  const accraCoords = [-0.22, 5.65];
-
-  window.accraMarker = new mapboxgl.Marker(accraMarkerEl).setLngLat(accraCoords);
+  // Add Greater Accra blinking marker now that map is fully ready
+  const accraEl = document.createElement('div');
+  accraEl.className = 'pulse-marker';
+  accraMarker = new mapboxgl.Marker(accraEl).setLngLat([-0.22, 5.65]); // Accra region center
 });
 
-// Handle scroll steps
+// Scrollama setup
 const scroller = scrollama();
 
 scroller
@@ -77,10 +74,10 @@ scroller
       });
     }
 
-    // Show "Greater Accra" label only on Slide 2
+    // Only show Greater Accra label on slide2
     if (chapter.id === 'slide2') {
-      window.accraMarker.addTo(map);
+      if (accraMarker) accraMarker.addTo(map);
     } else {
-      window.accraMarker.remove();
+      if (accraMarker) accraMarker.remove();
     }
   });
