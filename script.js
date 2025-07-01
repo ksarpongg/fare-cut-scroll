@@ -17,49 +17,67 @@ map.on('load', () => {
     type: 'geojson',
     data: 'https://raw.githubusercontent.com/johan/world.geo.json/master/countries/GHA.geo.json'
   });
+
   map.addLayer({
     id: 'ghana-outline',
     type: 'line',
     source: 'ghana-border',
-    paint: { 'line-color': '#fff', 'line-width': 2 }
+    paint: {
+      'line-color': '#ffffff',
+      'line-width': 2
+    }
   });
 
-  // Static bus stop markers
+  // Static bus stop labels
   const stops = [
     { name: 'Kasoa', coords: [-0.423756, 5.534052] },
     { name: 'Old Barrier', coords: [-0.329034, 5.551157] },
     { name: 'Mallam', coords: [-0.286262, 5.569050] },
     { name: 'Kaneshie', coords: [-0.237506, 5.566120] },
-    { name: 'Circle', coords: [-0.21684, 5.569132] }
+    { name: 'Circle', coords: [-0.216840, 5.569132] }
   ];
-  stops.forEach(s => {
+
+  stops.forEach(stop => {
     const el = document.createElement('div');
     el.className = 'stop-marker';
-    el.innerText = s.name;
-    new mapboxgl.Marker(el).setLngLat(s.coords).addTo(map);
+    el.innerText = stop.name;
+    new mapboxgl.Marker(el)
+      .setLngLat(stop.coords)
+      .addTo(map);
   });
 
-  // Blinking Greater Accra marker
-  const el2 = document.createElement('div');
-  el2.className = 'pulse-marker';
-  accraMarker = new mapboxgl.Marker({ element: el2, offset: [0,0] })
+  // Create blinking Greater Accra marker
+  const accraEl = document.createElement('div');
+  accraEl.className = 'pulse-marker';
+  accraMarker = new mapboxgl.Marker(accraEl)
     .setLngLat([-0.22, 5.65]);
 });
 
 const scroller = scrollama();
-scroller.setup({ step: '.step', offset: 0.5, debug: false })
-  .onStepEnter(resp => {
-    const ch = config.chapters.find(c => c.id === resp.element.id);
-    if (ch && ch.location) {
+
+scroller
+  .setup({
+    step: '.step',
+    offset: 0.5,
+    debug: false
+  })
+  .onStepEnter(response => {
+    const chapter = config.chapters.find(chap => chap.id === response.element.id);
+    if (chapter && chapter.location) {
       map.flyTo({
-        center: ch.location.center,
-        zoom: ch.location.zoom,
-        pitch: ch.location.pitch,
-        bearing: ch.location.bearing,
+        center: chapter.location.center,
+        zoom: chapter.location.zoom,
+        pitch: chapter.location.pitch,
+        bearing: chapter.location.bearing,
         speed: 0.8,
         essential: true
       });
     }
-    // Show only on slide2
-    resp.element.id === 'slide2' ? accraMarker.addTo(map) : accraMarker.remove();
+
+    // Control blinking marker
+    if (response.element.id === 'slide2') {
+      accraMarker.addTo(map);
+    } else {
+      accraMarker.remove();
+    }
   });
