@@ -3,10 +3,10 @@ mapboxgl.accessToken = config.accessToken;
 const map = new mapboxgl.Map({
   container: 'map',
   style: config.style,
-  center: config.chapters[0].center,
-  zoom: config.chapters[0].zoom,
-  pitch: config.chapters[0].pitch || 0,
-  bearing: config.chapters[0].bearing || 0
+  center: config.chapters[0].location.center,
+  zoom: config.chapters[0].location.zoom,
+  pitch: config.chapters[0].location.pitch || 0,
+  bearing: config.chapters[0].location.bearing || 0
 });
 
 const scroller = scrollama();
@@ -19,12 +19,12 @@ scroller
   })
   .onStepEnter(response => {
     const chapter = config.chapters.find(chap => chap.id === response.element.id);
-    if (chapter) {
+    if (chapter && chapter.location) {
       map.flyTo({
-        center: chapter.center,
-        zoom: chapter.zoom,
-        pitch: chapter.pitch || 0,
-        bearing: chapter.bearing || 0,
+        center: chapter.location.center,
+        zoom: chapter.location.zoom,
+        pitch: chapter.location.pitch || 0,
+        bearing: chapter.location.bearing || 0,
         speed: 0.8,
         essential: true
       });
