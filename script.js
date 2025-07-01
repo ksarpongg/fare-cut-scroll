@@ -33,7 +33,7 @@ const scroller = scrollama();
 // Create blinking Greater Accra marker (hidden by default)
 const accraMarkerEl = document.createElement('div');
 accraMarkerEl.className = 'pulse-marker';
-const accraMarker = new mapboxgl.Marker(accraMarkerEl).setLngLat([-0.1870, 5.6037]);
+const accraMarker = new mapboxgl.Marker(accraMarkerEl).setLngLat([-0.25, 5.70]);
 
 scroller
   .setup({
