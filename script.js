@@ -9,11 +9,14 @@ const map = new mapboxgl.Map({
   bearing: config.chapters[0].location.bearing || 0
 });
 
-// Create blinking Greater Accra marker (after map loads)
+// Scrollama setup
+const scroller = scrollama();
+
+// Define marker variable globally
 let accraMarker;
 
 map.on('load', function () {
-  // Add Ghana border outline
+  // Add Ghana country border
   map.addSource('ghana-border', {
     type: 'geojson',
     data: 'https://raw.githubusercontent.com/johan/world.geo.json/master/countries/GHA.geo.json'
@@ -29,20 +32,23 @@ map.on('load', function () {
     }
   });
 
-  // Create Accra marker element
-  const accraMarkerEl = document.createElement('div');
-  accraMarkerEl.className = 'pulse-marker';
+  // Create blinking Greater Accra marker
+  const accraWrapper = document.createElement('div');
+  accraWrapper.className = 'marker-wrapper';
 
-  // ✅ Anchor the marker properly so it aligns with coordinates
+  const accraPulse = document.createElement('div');
+  accraPulse.className = 'pulse-marker';
+
+  accraWrapper.appendChild(accraPulse);
+
+  // Place the marker at Greater Accra center
   accraMarker = new mapboxgl.Marker({
-    element: accraMarkerEl,
-    anchor: 'bottom' // aligns the base of the dot to the point
-  }).setLngLat([-0.22, 5.65]);
+    element: accraWrapper,
+    anchor: 'bottom'
+  }).setLngLat([-0.22, 5.65]); // Adjust if needed
 });
 
-// Scrollama scroll setup
-const scroller = scrollama();
-
+// Scroll-driven map fly-to
 scroller
   .setup({
     step: ".step",
@@ -62,7 +68,7 @@ scroller
       });
     }
 
-    // Show Accra marker only on slide2
+    // Show the blinking marker only on slide 2
     if (chapter.id === 'slide2' && accraMarker) {
       accraMarker.addTo(map);
     } else if (accraMarker) {
