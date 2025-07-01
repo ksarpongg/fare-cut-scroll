@@ -17,19 +17,19 @@ const config = {
       onChapterExit: []
     },
     {
-      id: 'slide2',
-      alignment: 'center',
-      title: '',
-      description: '',
-      location: {
-        center: [-0.1870, 5.6037],
-        zoom: 9,
-        pitch: 0,
-        bearing: 0
-      },
-      onChapterEnter: [],
-      onChapterExit: []
-    },
+  id: 'slide2',
+  alignment: 'center',
+  title: '',
+  description: '',
+  location: {
+    center: [-0.22, 5.65],
+    zoom: 8.7,
+    pitch: 0,
+    bearing: 0
+  },
+  onChapterEnter: [],
+  onChapterExit: []
+},
     {
       id: 'slide3',
       alignment: 'center',
