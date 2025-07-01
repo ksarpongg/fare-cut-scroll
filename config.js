@@ -1,5 +1,5 @@
 const config = {
-  style: 'mapbox://styles/mapbox/satellite-streets-v12',
+  style: 'mapbox://styles/mapbox/satellite-v9',
   accessToken: 'pk.eyJ1Ijoic2FycG9uZ2ciLCJhIjoiY21jaTdmdWJrMGN2bDJqcGR3ZnVhNGFnOSJ9.X5uC7PYBBzIjG_6bQ6184w',
   chapters: [
     {
