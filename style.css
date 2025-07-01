@@ -21,17 +21,17 @@ body {
   width: 100%;
   max-width: 700px;
   margin: 0 auto;
-  padding: 50vh 20px;
+  padding: 20vh 20px 40vh;  /* less top padding, more bottom scroll space */
 }
 
 .step {
   max-width: 600px;
-  margin: 0 auto 8rem auto;         /* more space between sections */
-  padding: 2.5rem;                  /* more space inside the box */
+  margin: 6rem auto;               /* big vertical gap between slides */
+  padding: 2rem;
   font-size: 1rem;
-  line-height: 1.8;                 /* looser text line spacing */
+  line-height: 1.8;
   color: white;
-  background-color: rgba(0, 0, 0, 0.6); /* readable + visible map */
+  background-color: rgba(0, 0, 0, 0.6);
   border-left: 4px solid #fff;
   border-radius: 4px;
   transition: all 0.3s ease-in-out;
