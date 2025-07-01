@@ -21,12 +21,14 @@ body {
   width: 100%;
   max-width: 700px;
   margin: 0 auto;
-  padding: 20vh 20px 40vh;  /* less top padding, more bottom scroll space */
+  padding: 10vh 20px 50vh; /* shorter top padding, longer bottom scroll */
 }
 
 .step {
-  max-width: 600px;
-  margin: 6rem auto;               /* big vertical gap between slides */
+  height: 90vh;                        /* nearly full screen height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
   padding: 2rem;
   font-size: 1rem;
   line-height: 1.8;
@@ -36,6 +38,7 @@ body {
   border-radius: 4px;
   transition: all 0.3s ease-in-out;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  margin: 0 auto 10vh auto;           /* space between slides */
 }
 
 
