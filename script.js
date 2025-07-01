@@ -42,4 +42,28 @@ map.on('load', function () {
     const el = document.createElement('div');
     el.className = 'stop-marker';
     el.innerText = stop.name;
-    new mapboxgl.Marker(el).setLngLat(stop.coords).ad
+    new mapboxgl.Marker(el).setLngLat(stop.coords).addTo(map);
+  });
+});
+
+// Scrollama logic
+scroller
+  .setup({
+    step: '.step',
+    offset: 0.5,
+    debug: false
+  })
+  .onStepEnter(response => {
+    const chapter = config.chapters.find(chap => chap.id === response.element.id);
+    if (chapter) {
+      map.flyTo({
+        center: chapter.location.center,
+        zoom: chapter.location.zoom,
+        pitch: chapter.location.pitch || 0,
+        bearing: chapter.location.bearing || 0,
+        speed: 0.8,
+        curve: 1,
+        essential: true
+      });
+    }
+  });
