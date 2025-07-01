@@ -30,3 +30,21 @@ scroller
       });
     }
   });
+
+// Add Ghana border outline when map loads
+map.on('load', function () {
+  map.addSource('ghana-border', {
+    type: 'geojson',
+    data: 'https://raw.githubusercontent.com/johan/world.geo.json/master/countries/GHA.geo.json'
+  });
+
+  map.addLayer({
+    id: 'ghana-outline',
+    type: 'line',
+    source: 'ghana-border',
+    paint: {
+      'line-color': '#ffffff',
+      'line-width': 2
+    }
+  });
+});
