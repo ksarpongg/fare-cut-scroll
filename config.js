@@ -8,11 +8,13 @@ const config = {
       title: '',
       description: '',
       location: {
-        center: [-1.0232, 7.9465],
+        center: [-1.0232, 7.9465], // Ghana national view
         zoom: 6,
         pitch: 0,
         bearing: 0
-      }
+      },
+      onChapterEnter: [],
+      onChapterExit: []
     },
     {
       id: 'slide2',
@@ -20,11 +22,13 @@ const config = {
       title: '',
       description: '',
       location: {
-        center: [-0.22, 5.65],
+        center: [-0.1870, 5.6037], // Greater Accra region view
         zoom: 9,
         pitch: 0,
         bearing: 0
-      }
+      },
+      onChapterEnter: [],
+      onChapterExit: []
     },
     {
       id: 'slide3',
@@ -32,11 +36,13 @@ const config = {
       title: '',
       description: '',
       location: {
-        center: [-0.423756, 5.534052],
+        center: [-0.423756, 5.534052], // Kasoa Bus Stop
         zoom: 16,
         pitch: 60,
         bearing: 0
-      }
+      },
+      onChapterEnter: [],
+      onChapterExit: []
     },
     {
       id: 'slide4',
@@ -44,11 +50,13 @@ const config = {
       title: '',
       description: '',
       location: {
-        center: [-0.329034, 5.551157],
+        center: [-0.3920, 5.5470], // Kasoa to Old Barrier
         zoom: 15,
         pitch: 60,
         bearing: 0
-      }
+      },
+      onChapterEnter: [],
+      onChapterExit: []
     },
     {
       id: 'slide5',
@@ -56,11 +64,13 @@ const config = {
       title: '',
       description: '',
       location: {
-        center: [-0.329034, 5.551157],
+        center: [-0.329034, 5.551157], // Old Barrier
         zoom: 16,
         pitch: 60,
         bearing: 0
-      }
+      },
+      onChapterEnter: [],
+      onChapterExit: []
     },
     {
       id: 'slide6',
@@ -68,11 +78,13 @@ const config = {
       title: '',
       description: '',
       location: {
-        center: [-0.286262, 5.569050],
+        center: [-0.286262, 5.569050], // Old Barrier to Mallam
         zoom: 15,
         pitch: 60,
         bearing: 0
-      }
+      },
+      onChapterEnter: [],
+      onChapterExit: []
     },
     {
       id: 'slide7',
@@ -80,11 +92,13 @@ const config = {
       title: '',
       description: '',
       location: {
-        center: [-0.286262, 5.569050],
+        center: [-0.286262, 5.569050], // Mallam
         zoom: 16,
         pitch: 60,
         bearing: 0
-      }
+      },
+      onChapterEnter: [],
+      onChapterExit: []
     },
     {
       id: 'slide8',
@@ -92,11 +106,13 @@ const config = {
       title: '',
       description: '',
       location: {
-        center: [-0.237506, 5.566120],
+        center: [-0.237506, 5.566120], // Mallam to Kaneshie
         zoom: 15,
         pitch: 60,
         bearing: 0
-      }
+      },
+      onChapterEnter: [],
+      onChapterExit: []
     },
     {
       id: 'slide9',
@@ -104,11 +120,13 @@ const config = {
       title: '',
       description: '',
       location: {
-        center: [-0.237506, 5.566120],
-        zoom: 15,
+        center: [-0.237506, 5.566120], // Kaneshie
+        zoom: 16,
         pitch: 60,
         bearing: 0
-      }
+      },
+      onChapterEnter: [],
+      onChapterExit: []
     },
     {
       id: 'slide10',
@@ -116,11 +134,13 @@ const config = {
       title: '',
       description: '',
       location: {
-        center: [-0.216840, 5.569132],
+        center: [-0.216840, 5.569132], // Kaneshie to Circle
         zoom: 15,
         pitch: 60,
         bearing: 0
-      }
+      },
+      onChapterEnter: [],
+      onChapterExit: []
     },
     {
       id: 'slide11',
@@ -128,11 +148,13 @@ const config = {
       title: '',
       description: '',
       location: {
-        center: [-0.216840, 5.569132],
-        zoom: 15,
+        center: [-0.216840, 5.569132], // Circle
+        zoom: 16,
         pitch: 60,
         bearing: 0
-      }
+      },
+      onChapterEnter: [],
+      onChapterExit: []
     }
   ]
 };
