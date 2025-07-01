@@ -12,37 +12,31 @@ const config = {
         zoom: 6,
         pitch: 0,
         bearing: 0
-      },
-      onChapterEnter: [],
-      onChapterExit: []
+      }
     },
     {
-  id: 'slide2',
-  alignment: 'center',
-  title: '',
-  description: '',
-  location: {
-    center: [-0.22, 5.65],
-    zoom: 8.7,
-    pitch: 0,
-    bearing: 0
-  },
-  onChapterEnter: [],
-  onChapterExit: []
-},
+      id: 'slide2',
+      alignment: 'center',
+      title: '',
+      description: '',
+      location: {
+        center: [-0.22, 5.65],
+        zoom: 9,
+        pitch: 0,
+        bearing: 0
+      }
+    },
     {
       id: 'slide3',
       alignment: 'center',
       title: '',
       description: '',
       location: {
-        center: [-0.4258, 5.5346],
+        center: [-0.423756, 5.534052],
         zoom: 16,
         pitch: 60,
         bearing: 0
-      },
-      onChapterEnter: [],
-      onChapterExit: []
+      }
     },
     {
       id: 'slide4',
@@ -50,13 +44,11 @@ const config = {
       title: '',
       description: '',
       location: {
-        center: [-0.3920, 5.5470],
+        center: [-0.329034, 5.551157],
         zoom: 15,
         pitch: 60,
         bearing: 0
-      },
-      onChapterEnter: [],
-      onChapterExit: []
+      }
     },
     {
       id: 'slide5',
@@ -64,13 +56,11 @@ const config = {
       title: '',
       description: '',
       location: {
-        center: [-0.3775, 5.5608],
+        center: [-0.329034, 5.551157],
         zoom: 16,
         pitch: 60,
         bearing: 0
-      },
-      onChapterEnter: [],
-      onChapterExit: []
+      }
     },
     {
       id: 'slide6',
@@ -78,13 +68,11 @@ const config = {
       title: '',
       description: '',
       location: {
-        center: [-0.3430, 5.5720],
+        center: [-0.286262, 5.569050],
         zoom: 15,
         pitch: 60,
         bearing: 0
-      },
-      onChapterEnter: [],
-      onChapterExit: []
+      }
     },
     {
       id: 'slide7',
@@ -92,13 +80,11 @@ const config = {
       title: '',
       description: '',
       location: {
-        center: [-0.3090, 5.5810],
+        center: [-0.286262, 5.569050],
         zoom: 16,
         pitch: 60,
         bearing: 0
-      },
-      onChapterEnter: [],
-      onChapterExit: []
+      }
     },
     {
       id: 'slide8',
@@ -106,13 +92,11 @@ const config = {
       title: '',
       description: '',
       location: {
-        center: [-0.2750, 5.5915],
+        center: [-0.237506, 5.566120],
         zoom: 15,
         pitch: 60,
         bearing: 0
-      },
-      onChapterEnter: [],
-      onChapterExit: []
+      }
     },
     {
       id: 'slide9',
@@ -120,13 +104,11 @@ const config = {
       title: '',
       description: '',
       location: {
-        center: [-0.2325, 5.5958],
-        zoom: 16,
+        center: [-0.237506, 5.566120],
+        zoom: 15,
         pitch: 60,
         bearing: 0
-      },
-      onChapterEnter: [],
-      onChapterExit: []
+      }
     },
     {
       id: 'slide10',
@@ -134,13 +116,11 @@ const config = {
       title: '',
       description: '',
       location: {
-        center: [-0.2100, 5.5989],
+        center: [-0.216840, 5.569132],
         zoom: 15,
         pitch: 60,
         bearing: 0
-      },
-      onChapterEnter: [],
-      onChapterExit: []
+      }
     },
     {
       id: 'slide11',
@@ -148,13 +128,11 @@ const config = {
       title: '',
       description: '',
       location: {
-        center: [-0.2056, 5.5601],
-        zoom: 16,
+        center: [-0.216840, 5.569132],
+        zoom: 15,
         pitch: 60,
         bearing: 0
-      },
-      onChapterEnter: [],
-      onChapterExit: []
+      }
     }
   ]
 };
