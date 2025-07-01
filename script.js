@@ -9,7 +9,31 @@ const map = new mapboxgl.Map({
   bearing: config.chapters[0].location.bearing || 0
 });
 
+// Add Ghana country border on map load
+map.on('load', function () {
+  map.addSource('ghana-border', {
+    type: 'geojson',
+    data: 'https://raw.githubusercontent.com/johan/world.geo.json/master/countries/GHA.geo.json'
+  });
+
+  map.addLayer({
+    id: 'ghana-outline',
+    type: 'line',
+    source: 'ghana-border',
+    paint: {
+      'line-color': '#ffffff',
+      'line-width': 2
+    }
+  });
+});
+
+// Scrollama scroll setup
 const scroller = scrollama();
+
+// Create blinking Greater Accra marker (hidden by default)
+const accraMarkerEl = document.createElement('div');
+accraMarkerEl.className = 'pulse-marker';
+const accraMarker = new mapboxgl.Marker(accraMarkerEl).setLngLat([-0.1870, 5.6037]);
 
 scroller
   .setup({
@@ -29,22 +53,11 @@ scroller
         essential: true
       });
     }
-  });
 
-// Add Ghana border outline when map loads
-map.on('load', function () {
-  map.addSource('ghana-border', {
-    type: 'geojson',
-    data: 'https://raw.githubusercontent.com/johan/world.geo.json/master/countries/GHA.geo.json'
-  });
-
-  map.addLayer({
-    id: 'ghana-outline',
-    type: 'line',
-    source: 'ghana-border',
-    paint: {
-      'line-color': '#ffffff',
-      'line-width': 2
+    // Show Accra marker only on slide2
+    if (chapter.id === 'slide2') {
+      accraMarker.addTo(map);
+    } else {
+      accraMarker.remove();
     }
   });
-});
