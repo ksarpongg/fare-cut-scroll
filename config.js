@@ -15,10 +15,20 @@ const config = {
       zoom: 9
     },
     {
-      id: 'slide3',
-      center: [-0.4258, 5.5346],
-      zoom: 14
-    },
+  id: 'slide3',
+  alignment: 'center',
+  title: '',
+  description: '',
+  location: {
+    center: [-0.4258, 5.5346],
+    zoom: 14,
+    pitch: 60,
+    bearing: 0
+  },
+  onChapterEnter: [],
+  onChapterExit: []
+}
+
     {
       id: 'slide4',
       center: [-0.3920, 5.5470],
