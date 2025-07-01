@@ -13,6 +13,7 @@ const scroller = scrollama();
 let accraMarker;
 
 map.on('load', function () {
+  // Ghana outline
   map.addSource('ghana-border', {
     type: 'geojson',
     data: 'https://raw.githubusercontent.com/johan/world.geo.json/master/countries/GHA.geo.json'
@@ -28,39 +29,17 @@ map.on('load', function () {
     }
   });
 
-  // Create blinking Greater Accra marker
-  const accraWrapper = document.createElement('div');
-  accraWrapper.className = 'marker-wrapper';
+  // Static Bus Stop Markers
+  const stops = [
+    { name: 'Kasoa', coords: [-0.423756, 5.534052] },
+    { name: 'Old Barrier', coords: [-0.329034, 5.551157] },
+    { name: 'Mallam', coords: [-0.286262, 5.569050] },
+    { name: 'Kaneshie', coords: [-0.237506, 5.566120] },
+    { name: 'Circle', coords: [-0.216840, 5.569132] }
+  ];
 
-  const accraPulse = document.createElement('div');
-  accraPulse.className = 'pulse-marker';
-
-  accraWrapper.appendChild(accraPulse);
-
-  accraMarker = new mapboxgl.Marker({
-    element: accraWrapper,
-    anchor: 'bottom'
-  }).setLngLat([-0.22, 5.65]);
-});
-
-scroller
-  .setup({ step: '.step', offset: 0.5, debug: false })
-  .onStepEnter(response => {
-    const chapter = config.chapters.find(chap => chap.id === response.element.id);
-    if (chapter && chapter.location) {
-      map.flyTo({
-        center: chapter.location.center,
-        zoom: chapter.location.zoom,
-        pitch: chapter.location.pitch || 0,
-        bearing: chapter.location.bearing || 0,
-        speed: 0.8,
-        essential: true
-      });
-    }
-
-    if (chapter.id === 'slide2' && accraMarker) {
-      accraMarker.addTo(map);
-    } else if (accraMarker) {
-      accraMarker.remove();
-    }
-  });
+  stops.forEach(stop => {
+    const el = document.createElement('div');
+    el.className = 'stop-marker';
+    el.innerText = stop.name;
+    new mapboxgl.Marker(el).setLngLat(stop.coords).ad
