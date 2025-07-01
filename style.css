@@ -1,39 +1,85 @@
-body { margin: 0; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
-#map { position: fixed; top:0; bottom:0; width: 100%; z-index: 0; }
-#story { position: relative; width: 100%; z-index: 10; }
-#features { width:700px; margin:0 auto; padding:10vh 20px 50vh; }
-.step { height:90vh; display:flex; align-items:center; justify-content:center; margin:0 auto 10vh; }
-.text-box { background:rgba(0,0,0,0.6); color:#fff; padding:2rem; border-left:4px solid #fff; border-radius:4px; max-width:600px; font-size:1rem; line-height:1.8; }
-.scene-photo { width:100%; max-height:300px; object-fit:cover; margin-bottom:10px; border-radius:4px; }
+body {
+  margin: 0;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
 
-/* blinking marker */
+#map {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: 0;
+}
+
+#story {
+  position: relative;
+  width: 100%;
+  z-index: 10;
+}
+
+#features {
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 10vh 20px 50vh; /* shorter top padding, longer bottom scroll */
+}
+
+.step {
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 10vh auto;
+}
+
+.text-box {
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 2rem;
+  border-left: 4px solid #fff;
+  border-radius: 4px;
+  max-width: 600px;
+  margin: 0 auto;
+  font-size: 1rem;
+  line-height: 1.8;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.scene-photo {
+  width: 100%;
+  max-height: 300px;
+  object-fit: cover;
+  margin-bottom: 10px;
+  border-radius: 4px;
+}
+
+/* ====== Greater Accra Marker (Blinking Dot) ====== */
 .pulse-marker {
-  width:18px; height:18px;
-  background:rgba(255,0,0,0.5);
-  border:2px solid #fff; border-radius:50%;
-  animation:pulse 1.5s infinite;
-  position:absolute; z-index:5;
-  box-shadow:0 0 4px rgba(0,0,0,0.3);
-}
-.pulse-marker::after {
-  content:"Greater Accra";
-  position:absolute; top:22px; left:50%;
-  transform:translateX(-50%);
-  background:rgba(0,0,0,0.6); color:#fff;
-  padding:2px 6px; border-radius:3px;
-  font-size:11px; white-space:nowrap;
-}
-@keyframes pulse {
-  0% { transform:scale(1); opacity:1; }
-  50% { transform:scale(1.5); opacity:0.5; }
-  100% { transform:scale(1); opacity:1; }
+  width: 18px;
+  height: 18px;
+  background: rgba(255, 0, 0, 0.5);
+  border: 2px solid #fff;
+  border-radius: 50%;
+  animation: pulse 1.5s infinite;
+  position: relative;
 }
 
-/* stop markers */
-.stop-marker {
-  background:rgba(0,0,0,0.7);
-  color:#fff; font-size:11px;
-  padding:2px 6px; border-radius:3px;
-  transform:translate(-50%,-50%);
-  white-space:nowrap; pointer-events:none;
+.pulse-marker::after {
+  content: "Greater Accra";
+  position: absolute;
+  top: 22px;
+  left: -30px;
+  background: rgba(0,0,0,0.6);
+  color: white;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-size: 11px;
+  white-space: nowrap;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.5); opacity: 0.5; }
+  100% { transform: scale(1); opacity: 1; }
 }
