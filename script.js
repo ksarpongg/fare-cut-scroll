@@ -35,7 +35,7 @@ map.on('load', function () {
 
   // Initialize marker with coordinates of Greater Accra
   accraMarker = new mapboxgl.Marker(accraMarkerEl)
-    .setLngLat([-0.25, 5.70]);
+  .setLngLat([-0.22, 5.65]);
 });
 
 // Scrollama scroll setup
