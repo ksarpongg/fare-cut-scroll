@@ -4,7 +4,7 @@ const config = {
   chapters: [
     { id: 'slide1', alignment: 'center', location: { center: [-1.0232, 7.9465], zoom: 6, pitch: 0, bearing: 0 } },
     { id: 'slide2', alignment: 'center', location: { center: [-0.22, 5.65], zoom: 9, pitch: 0, bearing: 0 } },
-    { id: 'slide3', alignment: 'center', location: { center: [-0.423756, 5.534052], zoom: 16, pitch: 0, bearing: 0 } },
+    { id: 'slide3', alignment: 'center', location: { center: [-0.423756, 5.534052], zoom: 18, pitch: 0, bearing: 0 } },
     { id: 'slide4', alignment: 'center', location: { center: [-0.329034, 5.551157], zoom: 15, pitch: 60, bearing: 0 } },
     { id: 'slide5', alignment: 'center', location: { center: [-0.329034, 5.551157], zoom: 16, pitch: 0, bearing: 0 } },
     { id: 'slide6', alignment: 'center', location: { center: [-0.286262, 5.569050], zoom: 15, pitch: 60, bearing: 0 } },
