@@ -21,7 +21,7 @@ const config = {
   description: '',
   location: {
     center: [-0.4258, 5.5346],
-    zoom: 14,
+    zoom: 15,
     pitch: 60,
     bearing: 0
   },
