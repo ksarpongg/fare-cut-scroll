@@ -20,14 +20,14 @@ const config = {
   title: '',
   description: '',
   location: {
-    center: [-0.4258, 5.5346],  // Kasoa Bus Stop
-    zoom: 16,                   // 🔍 Zoomed in closer
-    pitch: 60,                  // Tilted for 3D effect
+    center: [-0.4258, 5.5346], // Longitude first!
+    zoom: 16,
+    pitch: 60,
     bearing: 0
   },
   onChapterEnter: [],
   onChapterExit: []
-},
+}
 
     {
       id: 'slide4',
