@@ -9,10 +9,8 @@ const map = new mapboxgl.Map({
   bearing: config.chapters[0].location.bearing || 0
 });
 
-let accraMarker; // defined globally to toggle during scrolling
-
-map.on('load', () => {
-  // Ghana country outline
+// === Ghana outline ===
+map.on('load', function () {
   map.addSource('ghana-border', {
     type: 'geojson',
     data: 'https://raw.githubusercontent.com/johan/world.geo.json/master/countries/GHA.geo.json'
@@ -28,31 +26,32 @@ map.on('load', () => {
     }
   });
 
-  // Static bus stop labels
+  // === Add Greater Accra blinking marker here ===
+  const accraMarkerEl = document.createElement('div');
+  accraMarkerEl.className = 'pulse-marker';
+
+  // Make sure marker is created inside .on('load') and added *only* when needed
+  window.accraMarker = new mapboxgl.Marker(accraMarkerEl)
+    .setLngLat([-0.22, 5.65]); // Adjust if needed
+
+  // === Static labels for bus stops ===
   const stops = [
-    { name: "Kasoa", coords: [-0.423756, 5.534052] },
-    { name: "Old Barrier", coords: [-0.329034, 5.551157] },
-    { name: "Mallam", coords: [-0.286262, 5.569050] },
-    { name: "Kaneshie", coords: [-0.237506, 5.566120] },
-    { name: "Circle", coords: [-0.216840, 5.569132] }
+    { name: 'Kasoa', coords: [-0.423756, 5.534052] },
+    { name: 'Old Barrier', coords: [-0.329034, 5.551157] },
+    { name: 'Mallam', coords: [-0.286262, 5.569050] },
+    { name: 'Kaneshie', coords: [-0.237506, 5.566120] },
+    { name: 'Circle', coords: [-0.216840, 5.569132] }
   ];
 
   stops.forEach(stop => {
     const el = document.createElement('div');
     el.className = 'stop-marker';
     el.innerText = stop.name;
-    new mapboxgl.Marker(el)
-      .setLngLat(stop.coords)
-      .addTo(map);
+    new mapboxgl.Marker(el).setLngLat(stop.coords).addTo(map);
   });
-
-  // Add Greater Accra blinking marker now that map is fully ready
-  const accraEl = document.createElement('div');
-  accraEl.className = 'pulse-marker';
-  accraMarker = new mapboxgl.Marker(accraEl).setLngLat([-0.22, 5.65]); // Accra region center
 });
 
-// Scrollama setup
+// === Scrollama ===
 const scroller = scrollama();
 
 scroller
@@ -74,10 +73,10 @@ scroller
       });
     }
 
-    // Only show Greater Accra label on slide2
-    if (chapter.id === 'slide2') {
-      if (accraMarker) accraMarker.addTo(map);
-    } else {
-      if (accraMarker) accraMarker.remove();
+    // Show blinking marker only in Slide 2
+    if (chapter.id === 'slide2' && window.accraMarker) {
+      window.accraMarker.addTo(map);
+    } else if (window.accraMarker) {
+      window.accraMarker.remove();
     }
   });
