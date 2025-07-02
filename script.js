@@ -11,8 +11,10 @@ const map = new mapboxgl.Map({
 
 const scroller = scrollama();
 let accraMarker;
+const busStopMarkers = [];
 
 map.on('load', function () {
+  // Ghana outline
   map.addSource('ghana-border', {
     type: 'geojson',
     data: 'https://raw.githubusercontent.com/johan/world.geo.json/master/countries/GHA.geo.json'
@@ -28,7 +30,7 @@ map.on('load', function () {
     }
   });
 
-  // Create blinking Greater Accra marker
+  // Blinking Greater Accra Marker
   const accraWrapper = document.createElement('div');
   accraWrapper.className = 'marker-wrapper';
 
@@ -41,6 +43,24 @@ map.on('load', function () {
     element: accraWrapper,
     anchor: 'bottom'
   }).setLngLat([-0.22, 5.65]);
+
+  // Bus stop markers - created but not shown yet
+  const stops = [
+    { name: 'Kasoa', coords: [-0.423756, 5.534052] },
+    { name: 'Old Barrier', coords: [-0.329034, 5.551157] },
+    { name: 'Mallam', coords: [-0.286262, 5.569050] },
+    { name: 'Kaneshie', coords: [-0.237506, 5.566120] },
+    { name: 'Circle', coords: [-0.216840, 5.569132] }
+  ];
+
+  stops.forEach(stop => {
+    const el = document.createElement('div');
+    el.className = 'stop-marker';
+    el.innerText = stop.name;
+
+    const marker = new mapboxgl.Marker(el).setLngLat(stop.coords);
+    busStopMarkers.push(marker);
+  });
 });
 
 scroller
@@ -58,9 +78,22 @@ scroller
       });
     }
 
+    // Show blinking marker only on slide2
     if (chapter.id === 'slide2' && accraMarker) {
       accraMarker.addTo(map);
     } else if (accraMarker) {
       accraMarker.remove();
+    }
+
+    // Show bus stop labels only from slide3 onwards
+    const visibleSlides = [
+      'slide3', 'slide4', 'slide5',
+      'slide6', 'slide7', 'slide8',
+      'slide9', 'slide10', 'slide11'
+    ];
+    if (visibleSlides.includes(chapter.id)) {
+      busStopMarkers.forEach(marker => marker.addTo(map));
+    } else {
+      busStopMarkers.forEach(marker => marker.remove());
     }
   });
