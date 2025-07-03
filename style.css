@@ -19,7 +19,7 @@ body {
 
 #features {
   width: 100%;
-  max-width: 700px;
+  max-width: 600px;         /* narrower box */
   margin: 0 auto;
   padding: 10vh 20px 50vh;
 }
@@ -31,28 +31,28 @@ body {
   justify-content: center;
   margin: 0 auto 10vh auto;
 }
-
 .text-box {
   background-color: rgba(0, 0, 0, 0.6);
   color: white;
-  padding: 2rem;
+  padding: 1.5rem;
   border-left: 4px solid #fff;
-  border-radius: 4px;
-  max-width: 640px;  /* previously 600px */
-  margin: 0 auto;
+  border-radius: 6px;
+  max-width: 100%;
   font-size: 1rem;
-  line-height: 1.8;
+  line-height: 1.6;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .scene-photo {
   width: 100%;
-  max-width: 500px;
+  height: auto;
   max-height: 200px;
   object-fit: cover;
-  margin: 0 auto 15px auto;
-  display: block;
   border-radius: 4px;
+  margin-bottom: 1rem;
 }
 
 /* ====== Greater Accra Marker (Blinking Dot with Label) ====== */
