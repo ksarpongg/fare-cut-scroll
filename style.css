@@ -108,3 +108,11 @@ body {
   transform: translate(-50%, -50%);
   pointer-events: none;
 }
+
+/* ====== Arrow Marker Style ====== */
+.arrow-marker {
+  width: 24px;
+  height: 24px;
+  transform: rotate(25deg); /* adjust direction if needed */
+  pointer-events: none;
+}
