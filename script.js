@@ -61,6 +61,27 @@ map.on('load', function () {
     const marker = new mapboxgl.Marker(el).setLngLat(stop.coords);
     busStopMarkers.push(marker);
   });
+
+  // Add the fare route GeoJSON line but keep it hidden initially
+  map.addSource('fare-route', {
+    type: 'geojson',
+    data: 'https://raw.githubusercontent.com/ksarpongg/fare-cut-scroll/main/fare-route.json'
+  });
+
+  map.addLayer({
+    id: 'fare-route-line',
+    type: 'line',
+    source: 'fare-route',
+    layout: {
+      'line-join': 'round',
+      'line-cap': 'round',
+      'visibility': 'none' // Initially hidden
+    },
+    paint: {
+      'line-color': '#00ffff',
+      'line-width': 4
+    }
+  });
 });
 
 scroller
@@ -86,14 +107,25 @@ scroller
     }
 
     // Show bus stop labels only from slide3 onwards
-    const visibleSlides = [
+    const visibleStops = [
       'slide3', 'slide4', 'slide5',
       'slide6', 'slide7', 'slide8',
       'slide9', 'slide10', 'slide11'
     ];
-    if (visibleSlides.includes(chapter.id)) {
+    if (visibleStops.includes(chapter.id)) {
       busStopMarkers.forEach(marker => marker.addTo(map));
     } else {
       busStopMarkers.forEach(marker => marker.remove());
+    }
+
+    // Show route only from slide4 onwards
+    const routeSlides = [
+      'slide4', 'slide5', 'slide6',
+      'slide7', 'slide8', 'slide9',
+      'slide10', 'slide11'
+    ];
+    const visibility = routeSlides.includes(chapter.id) ? 'visible' : 'none';
+    if (map.getLayer('fare-route-line')) {
+      map.setLayoutProperty('fare-route-line', 'visibility', visibility);
     }
   });
