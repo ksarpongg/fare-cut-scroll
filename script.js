@@ -25,9 +25,10 @@ map.on('load', function () {
     type: 'line',
     source: 'ghana-border',
     paint: {
-      'line-color': '#ffffff',
-      'line-width': 2
-    }
+  'line-color': '#ffffff',
+  'line-width': 4,
+  'line-blur': 1.2  // optional glow/soft edge
+}
   });
 
   // Blinking Greater Accra Marker
