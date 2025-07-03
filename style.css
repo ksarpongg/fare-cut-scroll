@@ -19,55 +19,43 @@ body {
 
 #features {
   width: 100%;
-  max-width: 100%;
-  margin: 0;
-  padding: 10vh 5vw 50vh 5vw;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start; /* Left-align content */
+  max-width: 420px; /* narrower story panel */
+  margin: 0 auto;
+  padding: 10vh 0 50vh;
 }
 
 .step {
   height: 90vh;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
-  margin: 0 0 10vh 0;
+  justify-content: center;
+  margin: 0 auto 10vh auto;
 }
 
 .text-box {
   background-color: rgba(0, 0, 0, 0.6);
   color: white;
-  padding: 1rem; /* reduced from 1.5rem */
-  border-left: 4px solid #fff;
-  border-radius: 6px;
-  max-width: 500px;
-  font-size: 1rem;
-  line-height: 1.6;
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  margin: 0 auto;
+  padding: 0.5rem 0.75rem;
+  border-left: 3px solid #fff;
+  border-radius: 4px;
+  max-width: 100%;
+  font-size: 0.95rem;
+  line-height: 1.4;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: left;
+  box-sizing: border-box;
 }
-
-.text-box p {
-  max-width: 100%;
-  margin: 0;
-}
-
 
 .scene-photo {
   width: 100%;
   height: auto;
-  max-height: 200px;
+  max-height: 160px;
   object-fit: cover;
-  border-radius: 4px;
-  margin-bottom: 0.8rem; /* reduced bottom margin */
+  border-radius: 3px;
+  margin-bottom: 0.5rem;
 }
-
-
 
 /* ====== Greater Accra Marker (Blinking Dot with Label) ====== */
 .marker-wrapper {
@@ -120,16 +108,4 @@ body {
   white-space: nowrap;
   transform: translate(-50%, -50%);
   pointer-events: none;
-}
-
-/* ====== Responsive: Center on Small Screens ====== */
-@media (max-width: 768px) {
-  #features {
-    align-items: center;
-  }
-
-  .text-box {
-    align-items: center;
-    text-align: center;
-  }
 }
