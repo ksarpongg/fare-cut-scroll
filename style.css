@@ -19,12 +19,9 @@ body {
 
 #features {
   width: 100%;
-  max-width: 100%;
-  margin: 0;
-  padding: 10vh 5vw 50vh 5vw;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start; /* Left-align content */
+  max-width: 580px;
+  margin: 0 auto;
+  padding: 5vh 10px 30vh;
 }
 
 .step {
@@ -38,19 +35,20 @@ body {
 .text-box {
   background-color: rgba(0, 0, 0, 0.6);
   color: white;
-  padding: 1rem; /* reduced from 1.5rem */
-  border-left: 4px solid #fff;
-  border-radius: 6px;
-  max-width: 500px;
-  font-size: 1rem;
-  line-height: 1.6;
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  padding: 0.5rem; /* Very tight padding */
+  border-left: 3px solid #fff;
+  border-radius: 4px;
+  max-width: 480px; /* Slightly narrower box */
   margin: 0 auto;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: left;
 }
+
 
 .text-box p {
   max-width: 100%;
@@ -61,10 +59,10 @@ body {
 .scene-photo {
   width: 100%;
   height: auto;
-  max-height: 200px;
+  max-height: 180px;
   object-fit: cover;
-  border-radius: 4px;
-  margin-bottom: 0.8rem; /* reduced bottom margin */
+  border-radius: 3px;
+  margin-bottom: 0.5rem; /* Minimal gap below photo */
 }
 
 
