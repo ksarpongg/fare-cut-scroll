@@ -1,3 +1,4 @@
+// === Updated script.js ===
 mapboxgl.accessToken = config.accessToken;
 
 const map = new mapboxgl.Map({
@@ -12,6 +13,7 @@ const map = new mapboxgl.Map({
 const scroller = scrollama();
 let accraMarker;
 const busStopMarkers = [];
+let arrowMarker;
 
 map.on('load', function () {
   // Ghana outline
@@ -25,10 +27,30 @@ map.on('load', function () {
     type: 'line',
     source: 'ghana-border',
     paint: {
-  'line-color': '#ffffff',
-  'line-width': 4,
-  'line-blur': 1.2  // optional glow/soft edge
-}
+      'line-color': '#ffffff',
+      'line-width': 2
+    }
+  });
+
+  // Fare route line
+  map.addSource('fare-route', {
+    type: 'geojson',
+    data: 'fare-route.json'
+  });
+
+  map.addLayer({
+    id: 'fare-route-line',
+    type: 'line',
+    source: 'fare-route',
+    layout: {
+      'line-join': 'round',
+      'line-cap': 'round'
+    },
+    paint: {
+      'line-color': '#ffffff',
+      'line-width': 4,
+      'line-opacity': 0
+    }
   });
 
   // Blinking Greater Accra Marker
@@ -45,7 +67,7 @@ map.on('load', function () {
     anchor: 'bottom'
   }).setLngLat([-0.22, 5.65]);
 
-  // Bus stop markers - created but not shown yet
+  // Bus stop markers
   const stops = [
     { name: 'Kasoa', coords: [-0.424939, 5.534267] },
     { name: 'Old Barrier', coords: [-0.329034, 5.551157] },
@@ -63,26 +85,15 @@ map.on('load', function () {
     busStopMarkers.push(marker);
   });
 
-  // Add the fare route GeoJSON line but keep it hidden initially
-  map.addSource('fare-route', {
-    type: 'geojson',
-    data: 'https://raw.githubusercontent.com/ksarpongg/fare-cut-scroll/main/fare-route.json'
-  });
+  // === Arrow marker (initially hidden) ===
+  const arrowImg = document.createElement('img');
+  arrowImg.src = 'images/arrow-right-white.png';
+  arrowImg.className = 'arrow-marker';
 
-  map.addLayer({
-    id: 'fare-route-line',
-    type: 'line',
-    source: 'fare-route',
-    layout: {
-      'line-join': 'round',
-      'line-cap': 'round',
-      'visibility': 'none' // Initially hidden
-    },
-    paint: {
-      'line-color': '#00ffff',
-      'line-width': 4
-    }
-  });
+  arrowMarker = new mapboxgl.Marker({
+    element: arrowImg,
+    anchor: 'center'
+  }).setLngLat([-0.38, 5.542]); // Midpoint between Kasoa and Old Barrier
 });
 
 scroller
@@ -108,25 +119,28 @@ scroller
     }
 
     // Show bus stop labels only from slide3 onwards
-    const visibleStops = [
+    const visibleSlides = [
       'slide3', 'slide4', 'slide5',
       'slide6', 'slide7', 'slide8',
       'slide9', 'slide10', 'slide11'
     ];
-    if (visibleStops.includes(chapter.id)) {
+    if (visibleSlides.includes(chapter.id)) {
       busStopMarkers.forEach(marker => marker.addTo(map));
     } else {
       busStopMarkers.forEach(marker => marker.remove());
     }
 
-    // Show route only from slide4 onwards
-    const routeSlides = [
-      'slide4', 'slide5', 'slide6',
-      'slide7', 'slide8', 'slide9',
-      'slide10', 'slide11'
-    ];
-    const visibility = routeSlides.includes(chapter.id) ? 'visible' : 'none';
-    if (map.getLayer('fare-route-line')) {
-      map.setLayoutProperty('fare-route-line', 'visibility', visibility);
+    // Show route line and arrow from slide4 onwards
+    if (visibleSlides.includes(chapter.id)) {
+      map.setPaintProperty('fare-route-line', 'line-opacity', 1);
+    } else {
+      map.setPaintProperty('fare-route-line', 'line-opacity', 0);
+    }
+
+    // Show arrow on slide 4 only
+    if (chapter.id === 'slide4') {
+      arrowMarker.addTo(map);
+    } else if (arrowMarker) {
+      arrowMarker.remove();
     }
   });
