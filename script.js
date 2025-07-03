@@ -46,7 +46,7 @@ map.on('load', function () {
 
   // Bus stop markers - created but not shown yet
   const stops = [
-    { name: 'Kasoa', coords: [0.424846, 5.534294] },
+    { name: 'Kasoa', coords: [-0.424846, 5.534294] },
     { name: 'Old Barrier', coords: [-0.329034, 5.551157] },
     { name: 'Mallam', coords: [-0.286262, 5.569050] },
     { name: 'Kaneshie', coords: [-0.237506, 5.566120] },
