@@ -1,6 +1,6 @@
 const config = {
   style: 'mapbox://styles/mapbox/satellite-v9',
-  accessToken: config.accessToken, // Load from secrets.js
+  accessToken: 'pk.eyJ1Ijoic2FycG9uZ2ciLCJhIjoiY21jcDBraDByMDFjZDJscjJiaHZsY28xbiJ9.di8qughsiNYQcRjG1X1PHQ',
   chapters: [
     { id: 'slide1', alignment: 'center', location: { center: [-1.0232, 7.9465], zoom: 6, pitch: 0, bearing: 0 } },
     { id: 'slide2', alignment: 'center', location: { center: [-0.22, 5.65], zoom: 9, pitch: 0, bearing: 0 } },
