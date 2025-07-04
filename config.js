@@ -10,7 +10,7 @@ const config = {
     { id: 'slide6', alignment: 'center', location: { center: [-0.286262, 5.569050], zoom: 16.5, pitch: 60, bearing: 45 } },
     { id: 'slide7', alignment: 'center', location: { center: [-0.286262, 5.569050], zoom: 17, pitch: 0, bearing: 180 } },
     { id: 'slide8', alignment: 'center', location: { center: [-0.237506, 5.566120], zoom: 15, pitch: 60, bearing: 0 } },
-    { id: 'slide9', alignment: 'center', location: { center: [-0.237506, 5.566120], zoom: 17, pitch: 0, bearing: 105 } },
+    { id: 'slide9', alignment: 'center', location: { center: [-0.237506, 5.566120], zoom: 17, pitch: 0, bearing: 110 } },
     { id: 'slide10', alignment: 'center', location: { center: [-0.21684, 5.569132], zoom: 15, pitch: 60, bearing: 0 } },
     { id: 'slide11', alignment: 'center', location: { center: [-0.21684, 5.569132], zoom: 17, pitch: 0, bearing: 0 } }
   ]
