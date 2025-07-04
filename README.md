@@ -1,6 +1,6 @@
 # How a 15% fare cut exposed Ghana’s commuter chaos
 
-![Project Screenshot](images/farecut-preview.png)
+![Project Screenshot](images/kasoa.jpg)
 
 **Author:** Charles Sarpong Amponsah  
 **Project Type:** Scroll-driven visual story with Mapbox GL JS  
