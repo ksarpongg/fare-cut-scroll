@@ -38,12 +38,18 @@ This scroll-driven visual story combines satellite imagery, live map transitions
 
 ---
 
-## 🛡️ Access Token Safety
+## Access Token Safety
 
-To protect the Mapbox access token:
-- `config.js` does not expose secrets
-- A local-only `secrets.js` is used during development
-- `.gitignore` ensures private keys never reach the public repo
+This project uses a **restricted Mapbox access token** safely embedded in `config.js`. 
+
+To ensure the token is not misused:
+- The token is restricted by URL in the Mapbox dashboard (`https://ksarpongg.github.io/*`)
+- It only grants minimal permissions (`styles:read`) needed for map display
+- No sensitive or write-access scopes are included
+
+While `secrets.js` was used in local development to protect a full-access token, the public version no longer requires it.
+
+✅ The token currently in use is safe for public projects.
 
 ---
 
@@ -67,7 +73,8 @@ It aims to elevate data-driven storytelling in Ghana and across Africa — blend
 
 For collaborations, interviews, or media use:
 
-**Email:** ksarpongg@gmail.com  
+**Email:** ksarpongg@gmail.com 
+**Whatsapp:** +233244987043
 **Twitter/X:** [@charamponsah](https://x.com/charamponsah)
 
 ---
